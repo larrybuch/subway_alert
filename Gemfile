@@ -5,7 +5,15 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
+gem 'pry-rails'       #pry for debugging
+gem 'annotate'        #annotate models
+gem 'rails-footnotes' #for debugging
+gem 'ipsum'           #adds ipsum to seed file
+gem 'bcrypt-ruby'     #password encryption
+gem 'httparty'
+gem 'twilio-ruby'     #twilio for sending txts
+gem 'nokogiri'        #for parsing xml
 
 
 # Gems used only for assets and not required
