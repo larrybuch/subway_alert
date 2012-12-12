@@ -1,11 +1,3 @@
-Welcome!
-
-<br>
-<br>
-Sign up
-
-<!-- Add Facebook & Twitter Integration here. -->
-
 <%= form_for (@user) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -32,17 +24,4 @@ Sign up
   <br>email or text
   <br>
   <%= f.submit %>
-<% end %>
-<br>
-<br>
-or log in to edit your preferences.
-
-<%= form_tag '/login' do %>
-  <%= label_tag 'Username' %>
-  <%= text_field_tag 'username' %>
-  <br>
-  <%= label_tag 'Password' %>
-  <%= password_field_tag 'password' %>
-  <br>
-  <%= submit_tag 'Login' %>
 <% end %>

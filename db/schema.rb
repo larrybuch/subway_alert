@@ -11,12 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212160806) do
+ActiveRecord::Schema.define(:version => 20121212173313) do
 
   create_table "lines", :force => true do |t|
     t.string   "line"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "lines_users", :force => true do |t|
+    t.integer "user_id"
+    t.integer "line_id"
   end
 
   create_table "statuses", :force => true do |t|
@@ -25,11 +30,6 @@ ActiveRecord::Schema.define(:version => 20121212160806) do
     t.text     "info"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "trains_users", :force => true do |t|
-    t.integer "user_id"
-    t.integer "line_id"
   end
 
   create_table "users", :force => true do |t|

@@ -14,6 +14,7 @@ gem 'bcrypt-ruby'     #password encryption
 gem 'httparty'
 gem 'twilio-ruby'     #twilio for sending txts
 gem 'nokogiri'        #for parsing xml
+gem 'pry-debugger'
 
 
 # Gems used only for assets and not required
