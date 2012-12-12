@@ -23,19 +23,22 @@ Sign up
   <br>
 <!--   iterate over all of the lines in the database and add a checkbox for each one -->
   <% @lines.each do |line| %>
-    <%= check_box_tag '[line_ids][]', line.id %>
     <%= line.line %>
+    <%= check_box_tag '[line_ids][]', line.id, @user.lines.include?(line) %>
   <% end %>
   <br>
   <!-- INSERT LINES FROM LINES TABLE HERE -->
   How do you want to be notified?
-  <br>email or text
+  <%= f.label :email %>
+  <%= f.check_box :email %>
+  <%= f.label :text_message %>
+  <%= f.check_box :text %>
   <br>
   <%= f.submit %>
 <% end %>
 <br>
 <br>
-or log in to edit your preferences.
+Or log in to edit your preferences.
 
 <%= form_tag '/login' do %>
   <%= label_tag 'Username' %>

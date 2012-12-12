@@ -1,1 +1,25 @@
+<br>
 <%= @user.name %>'s edit page
+<br>
+<%= form_for (@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  Which lines do you want notifications about?
+  <% Line.all.each do |line| %>
+    <%= line.line %>
+    <%= check_box_tag '[line_ids][]', line.id, @user.lines.include?(line) %>
+  <% end %>
+  <br>
+  How do you want to be notified?
+  <%= f.label :email %>
+  <%= f.check_box :email %>
+  <%= f.label :text_message %>
+  <%= f.check_box :text %>
+  <br>
+  <%= f.submit %>
+
+<% end %>

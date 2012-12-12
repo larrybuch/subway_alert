@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:username] = user.username
       session[:id] = user[:id]
-      redirect_to users_path
+      redirect_to edit_user_path(user)
     else
       render :new
     end

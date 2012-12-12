@@ -1,1 +1,7 @@
-Users show page
+<br>
+You're tracking the
+<ul>
+  <% @user.lines.each do |line| %>
+    <li><%= line.line %></li>
+  <% end %>
+</ul>

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -40,6 +41,17 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+
+    #updates users train tracking preference
+    lines = params[:line_ids]
+    @user.line_ids = lines
+
+    if @user.update_attributes(params[:user])
+      redirect_to @user
+    else
+      render :edit
+    end
   end
 
   def destroy
