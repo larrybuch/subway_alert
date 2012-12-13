@@ -49,3 +49,16 @@ Or log in to edit your preferences.
   <br>
   <%= submit_tag 'Login' %>
 <% end %>
+
+<br>
+
+<%= form_tag '/' do %>
+  <%= submit_tag 'Get data' %>
+<% end %>
+
+<br>
+Line conditions
+
+<% @lines.each do |line| %>
+  <p><%= line.line %>, <%= line.statuses[0]["condition"] %></p>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212173313) do
+ActiveRecord::Schema.define(:version => 20121213212949) do
 
   create_table "lines", :force => true do |t|
     t.string   "line"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20121212173313) do
 
   create_table "statuses", :force => true do |t|
     t.integer  "line_id"
-    t.string   "status"
+    t.string   "condition"
     t.text     "info"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

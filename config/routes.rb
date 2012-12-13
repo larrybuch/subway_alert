@@ -3,9 +3,11 @@ SubwayAlert::Application.routes.draw do
   resources :users
   get '/lines' => 'lines#index'
 
-  get   '/login' => 'session#new'
-  post  '/login' => 'session#create'
+  get   '/login'  => 'session#new'
+  post  '/login'  => 'session#create'
   get   '/logout' => 'session#destroy'
+
+  post '/' => 'statuses#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
