@@ -19,6 +19,9 @@ Sign up
   <%= f.label :password_confirmation %>
   <%= f.text_field :password_confirmation %>
   <br>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <br>
   Which lines do you want to be notified about?
   <br>
 <!--   iterate over all of the lines in the database and add a checkbox for each one -->
@@ -26,13 +29,6 @@ Sign up
     <%= line.line %>
     <%= check_box_tag '[line_ids][]', line.id, @user.lines.include?(line) %>
   <% end %>
-  <br>
-  <!-- INSERT LINES FROM LINES TABLE HERE -->
-  How do you want to be notified?
-  <%= f.label :email %>
-  <%= f.check_box :email %>
-  <%= f.label :text_message %>
-  <%= f.check_box :text %>
   <br>
   <%= f.submit %>
 <% end %>

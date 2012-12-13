@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213212949) do
+ActiveRecord::Schema.define(:version => 20121213223908) do
 
   create_table "lines", :force => true do |t|
     t.string   "line"
@@ -35,11 +35,10 @@ ActiveRecord::Schema.define(:version => 20121213212949) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "password_digest"
-    t.boolean  "email"
-    t.boolean  "text"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "username"
+    t.string   "phone"
   end
 
 end

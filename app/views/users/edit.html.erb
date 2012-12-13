@@ -14,11 +14,9 @@
     <%= check_box_tag '[line_ids][]', line.id, @user.lines.include?(line) %>
   <% end %>
   <br>
-  How do you want to be notified?
-  <%= f.label :email %>
-  <%= f.check_box :email %>
-  <%= f.label :text_message %>
-  <%= f.check_box :text %>
+  Edit your phone number.
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
   <br>
   <%= f.submit %>
 
