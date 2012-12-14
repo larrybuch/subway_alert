@@ -32,9 +32,6 @@ namespace :line_condition do
             @message = client.account.sms.messages.create({:from => '+19177463330', :to => phone_number, :body => "Woo woo! The #{line.line} is back up."})
           end
         end
-
-      else
-        line.statuses[0].create(:condition => condition, :info => info) #creates a status if there isn't one
       end
     end
   end
