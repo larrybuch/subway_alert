@@ -1,14 +1,3 @@
-User.delete_all
-
-Line.create(:line => '123')
-Line.create(:line => '456')
-Line.create(:line => '7')
-Line.create(:line => 'ACE')
-Line.create(:line => 'BDFM')
-Line.create(:line => 'G')
-Line.create(:line => 'JZ')
-Line.create(:line => 'L')
-Line.create(:line => 'NQR')
-Line.create(:line => 'S')
-Line.create(:line => 'SIR')
-
+Line.all.each do |line|
+  Status.create(:line_id => line.id, :condition => 'GOOD SERVICE', :info => 'Service is good.' )
+end
