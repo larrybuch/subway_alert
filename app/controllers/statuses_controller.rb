@@ -9,12 +9,26 @@ class StatusesController < ApplicationController
       line       = Line.find(num + 1)
       condition  = lines[num]["status"]
       info       = lines[num]["text"]
+
       if condition != line.statuses[0].condition
         line.statuses[0].update_attributes(:condition => condition, :info => info)
+
+        users_to_text = line.users #returns an array of users who are tracking that line
+        number_to_text = users_to_text.size #returns the number of users in the array to text
+
         if line.statuses[0].condition = "DELAYS"
-          puts "Delays!"
+          number_to_text.times do |num|
+            phone_number = users_to_text[num].phone
+            client = Twilio::REST::Client.new(TW_SID, TW_TOK)
+            @message = client.account.sms.messages.create({:from => '+19177463330', :to => phone_number, :body => 'Aw Snap! The trains down'})
+          end
+
         elsif line.statuses[0].condition = "GOOD SERVICE"
-          puts "Good Service!"
+          number_to_text.times do |num|
+            phone_number = users_to_text[num].phone
+            client = Twilio::REST::Client.new(TW_SID, TW_TOK)
+            @message = client.account.sms.messages.create({:from => '+19177463330', :to => phone_number, :body => 'Woo woo! The trains back up.'})
+          end
         end
       end
     end

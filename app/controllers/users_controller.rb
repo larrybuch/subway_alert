@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 
       @user.line_ids = lines
 
-      binding.pry
       # this stuff below worked, but phil found a better way to do it, above
       # lines.each do |line|
       #   @user.lines << Line.find(line)
