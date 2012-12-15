@@ -16,20 +16,15 @@ class StatusesController < ApplicationController
         users_to_text = line.users #returns an array of users who are tracking that line
         number_to_text = users_to_text.size #returns the number of users in the array to text
 
-        if line.statuses[0].condition == "DELAYS"
-          number_to_text.times do |num|
-            phone_number = users_to_text[num].phone
-            puts phone_number
-            client = Twilio::REST::Client.new(TW_SID, TW_TOK)
+        number_to_text.times do |x|
+          phone_number = users_to_text[x].phone
+          client = Twilio::REST::Client.new(TW_SID, TW_TOK)
+
+          if line.statuses[0].condition == "DELAYS"
             status_update = line.statuses[0].info.split(/\n/)[5].strip.gsub('<STRONG>', '').gsub('</STRONG>', '') #parses the MTA data to give only the status update.
-            @message = client.account.sms.messages.create({:from => '+19177463330', :to => phone_number, :body => "Aw snap! #{status_update}"})
-          end
-        elsif line.statuses[0].condition == "GOOD SERVICE"
-          number_to_text.times do |num|
-            phone_number = users_to_text[num].phone
-            puts phone_number
-            client = Twilio::REST::Client.new(TW_SID, TW_TOK)
-            @message = client.account.sms.messages.create({:from => '+19177463330', :to => phone_number, :body => "Woo woo! The #{line.line} is back up."})
+            client.account.sms.messages.create({:from => '+19177463330', :to => phone_number, :body => "Aw snap! #{status_update}"})
+          elsif line.statuses[0].condition == "GOOD SERVICE"
+            client.account.sms.messages.create({:from => '+19177463330', :to => phone_number, :body => "Woo woo! The #{line.line} line is running as normal."})
           end
         end
       end
