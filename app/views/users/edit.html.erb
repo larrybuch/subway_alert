@@ -1,5 +1,6 @@
 <br>
-<%= @user.name %>'s edit page
+<h1>Hey, <%= @user.name %></h1>
+<h2>Edit your preferences here.</h2>
 <br>
 <%= form_for (@user) do |f| %>
   <%= f.label :name %>
@@ -15,7 +16,6 @@
   <% end %>
   <br>
   Edit your phone number.
-  <%= f.label :phone %>
   <%= f.text_field :phone %>
   <br>
   <%= f.submit %>

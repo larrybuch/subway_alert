@@ -1,4 +1,4 @@
-Welcome <%= show_user_name %>!
+<h1>Welcome <%= show_user_name %>!</h1>
 <%= show_login_or_logout_link %>
 
 <br>
@@ -15,10 +15,10 @@ Sign up
   <%= f.text_field :username %>
   <br>
   <%= f.label :password %>
-  <%= f.text_field :password %>
+  <%= f.password_field :password %>
   <br>
   <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
   <br>
   <%= f.label :phone %>
   <%= f.text_field :phone %>
