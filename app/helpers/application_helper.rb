@@ -1,9 +1,10 @@
 module ApplicationHelper
   def show_login_or_logout_link
     if @authenticated_user
-      link_to "Logout", logout_path
+      "<li>" + link_to("Logout", logout_path) + "</li>" +
+      "<li>" + link_to("Settings", edit_user_path(@authenticated_user))+ "</li>"
     else
-      link_to "Login", login_path
+      "<li>" + link_to("Login", login_path) + "</li>"
     end
   end
 

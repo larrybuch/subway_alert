@@ -1,9 +1,5 @@
-<h1>Welcome <%= show_user_name %>!</h1>
-<%= show_login_or_logout_link %>
-
-<br>
-<br>
-Sign up
+<h1> Your train&#8217;s delayed ... again.
+Don&#8217;t you wish you knew ahead of time? </h1>
 
 <!-- Add Facebook & Twitter Integration here. -->
 
@@ -34,18 +30,6 @@ Sign up
   <%= f.submit %>
 <% end %>
 <br>
-<br>
-Or log in to edit your preferences.
-
-<%= form_tag '/login' do %>
-  <%= label_tag 'Username' %>
-  <%= text_field_tag 'username' %>
-  <br>
-  <%= label_tag 'Password' %>
-  <%= password_field_tag 'password' %>
-  <br>
-  <%= submit_tag 'Login' %>
-<% end %>
 
 <br>
 

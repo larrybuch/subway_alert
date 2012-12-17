@@ -4,11 +4,30 @@
   <title>SubwayAlert</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script type="text/javascript" src="//use.typekit.net/ggc0wqx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <div class="logo">
+    <span id="big-circle"><%= link_to '?', root_path %></span>
+    <div id="name"><%= link_to 'Subway Alert', root_path %></div>
+  </div>
+  <ul>
+    <%== show_login_or_logout_link %>
+    <li><a href="#">Service Status</a></li>
+  </ul>
+</header>
+
+<div class="clear"></div>
+
+<div class="wrapper">
+  <div class="container">
+    <%= yield %> <!-- The Goods -->
+  </div>
+</div>
 
 </body>
 </html>

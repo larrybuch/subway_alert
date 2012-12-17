@@ -1,0 +1,141 @@
+@import 'colors';
+@import 'fonts';
+@import 'lines';
+
+body
+{
+  font: normal 100% $sans-serif;
+  background-color: $dark-gray;
+  color: white;
+}
+
+.clear
+{
+  clear:both;
+}
+
+.wrapper
+{
+  background-color: $red;
+}
+
+.container
+{
+  width: 90%;
+  margin: 20px auto;
+  padding-top: 30px;
+}
+
+header
+{
+  width:90%;
+  margin: 25px auto;
+
+  #name
+  {
+    font-weight: 800;
+    font-size: 2em;
+    float:left;
+    margin-top: 5px;
+
+    a
+    {
+      color:white;
+      text-decoration: none;
+    }
+  }
+
+  ul
+  {
+    padding-top: 5px;
+    li
+    {
+      font-weight: 800;
+      background-color: $orange;
+      padding:10px;
+      font-size: .95em; // 20px / 16px
+      border-radius: 1.25em;
+      float: right;
+      margin-left: 10px;
+
+      &:hover
+      {
+        background-color: $lime-green;
+      }
+
+      a
+      {
+        color:$dark-gray;
+        text-decoration:none;
+      }
+    }
+  }
+}
+
+#big-circle
+{
+  width: 50px;
+  height:50px;
+  border-radius:75px;
+  font-size:30px;
+  color:white;
+  line-height:50px;
+  text-align:center;
+  font-family: $helvetica;
+  font-weight: bold;
+  float:left;
+  margin-right: 10px;
+  margin-bottom:10px;
+  border: none;
+  padding:0px;
+  background-color: $orange;
+
+  a
+  {
+    color:white;
+    text-decoration: none;
+  }
+
+  &:hover
+  {
+    background-color: $lime-green;
+  }
+}
+
+h1
+{
+  font-size: 3.4em; //32(target) / 16(context) (set as 100% in body)
+  letter-spacing: -0.03em;
+  line-height: 1em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color:white;
+}
+
+
+
+// .tagline
+// {
+//   font-family: "proxima-nova-1","proxima-nova-2";
+//   letter-spacing: -.04em;
+//   font-weight: 800;
+//   background-color: $orange;
+//   padding:10px;
+//   font-size: 1.1em; // 20px / 16px
+//   border-radius: 1.25em;
+//   margin-right:20px;
+//   margin-top: 20px;
+//   float:left;
+
+//   a
+//   {
+//     color:black;
+//     text-decoration: none;
+//   }
+
+//   &:hover
+//   {
+//     background-color: white;
+//   }
+// }
+
