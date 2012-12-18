@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   def create
-    x = HTTParty.get('http://larrybuch.com/mta.txt')
+    x = HTTParty.get('http://www.mta.info/status/serviceStatus.txt')
     y = Hash.from_xml(x)
     lines = y["service"]["subway"]["line"]
     count = lines.size
