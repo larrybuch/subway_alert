@@ -7,7 +7,8 @@ SubwayAlert::Application.routes.draw do
   post  '/login'  => 'session#create'
   get   '/logout' => 'session#destroy'
 
-  post '/' => 'statuses#create'
+  post '/'        => 'statuses#create'
+  post '/delete'  => 'users#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

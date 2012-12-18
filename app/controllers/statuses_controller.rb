@@ -29,6 +29,6 @@ class StatusesController < ApplicationController
         end
       end
     end
-    redirect_to root_path
+    redirect_to lines_path
   end
 end

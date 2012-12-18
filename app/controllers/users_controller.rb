@@ -55,5 +55,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    user = @authenticated_user
+    user.delete
+
+    redirect_to root_path
   end
 end
