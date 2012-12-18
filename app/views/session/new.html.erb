@@ -1,13 +1,25 @@
 <h1>Log In</h1>
 
-<%= form_tag '/login' do %>
-  <div class="field">
-    <%= label_tag 'Username' %>
-    <%= text_field_tag 'username' %>
+<div class="column-wrapper">
+  <div class="column-2">
+    <%= form_tag '/login' do %>
+      <div class="field">
+        <%= label_tag 'Username' %>
+      </div>
+      <div class="field-box">
+        <%= text_field_tag 'username' %>
+      </div>
   </div>
-  <div class="field">
-  <%= label_tag 'Password' %>
-  <%= password_field_tag 'password' %>
+  <div class="column-2">
+      <div class="field">
+        <%= label_tag 'Password' %>
+      </div>
+      <div class="field-box">
+        <%= password_field_tag 'password' %>
+      </div>
   </div>
-  <%= submit_tag 'Login' %>
-<% end %>
+      <%= submit_tag 'Login' %>
+    <% end %>
+</div>
+
+<div class="clear"></div>

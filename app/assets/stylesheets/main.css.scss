@@ -14,18 +14,6 @@ body
   clear:both;
 }
 
-.wrapper
-{
-  background-color: $red;
-}
-
-.container
-{
-  width: 90%;
-  margin: 20px auto;
-  padding-top: 30px;
-}
-
 header
 {
   width:90%;
@@ -42,12 +30,18 @@ header
     {
       color:white;
       text-decoration: none;
+
+      &:hover
+      {
+        color: $lime-green;
+      }
     }
   }
 
   ul
   {
     padding-top: 5px;
+
     li
     {
       font-weight: 800;
@@ -78,7 +72,6 @@ header
   height:50px;
   border-radius:75px;
   font-size:30px;
-  color:white;
   line-height:50px;
   text-align:center;
   font-family: $helvetica;
@@ -92,7 +85,7 @@ header
 
   a
   {
-    color:white;
+    color:$dark-gray;
     text-decoration: none;
   }
 
@@ -102,40 +95,233 @@ header
   }
 }
 
+.wrapper
+{
+  background-color: $dark-gray;
+}
+
+.container
+{
+  width: 90%;
+  margin: 20px auto;
+  padding-top: 30px;
+
+  h1
+  {
+    margin-bottom: 20px;
+  }
+}
+
+.red-wrapper
+{
+  background-color: $red;
+}
+
+#message
+{
+  width: 90%;
+  margin: 20px auto;
+  padding: 40px 0;
+
+  h1
+  {
+    margin-bottom: 20px;
+  }
+}
+
 h1
 {
-  font-size: 3.4em; //32(target) / 16(context) (set as 100% in body)
+  font-size: 3.8em; //32(target) / 16(context) (set as 100% in body)
   letter-spacing: -0.03em;
   line-height: 1em;
-  font-weight: bold;
-  margin-bottom: 30px;
+  font-weight: 800;
   color:white;
+}
+
+h2
+{
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+h4
+{
+  font-size: 1.25em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 10px;
+}
+
+.column-wrapper
+{
+  margin-bottom: 25px;
+
+  li
+  {
+    font-weight: bold;
+  }
+
+  .column-2
+  {
+    float:left;
+    width: 42%;
+    margin: 0px 8% 0 0;
+  }
+
+  .column-4
+  {
+    text-align: center;
+    width: 23%;
+    float: left;
+    margin: 10px 1%;
+  }
+
+  input[type="submit"]
+  {
+    font-weight: 800;
+    background-color: $orange;
+    padding:10px;
+    font-size: 1em; // 20px / 16px
+    border-radius: 1.25em;
+    border: none;
+    font-family: $sans-serif;
+
+    &:hover
+    {
+      background-color: $lime-green;
+    }
+  }
+}
+
+.field
+{
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 1.1em;
+}
+
+.field-box
+{
+  input
+  {
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 20px;
+    font-family: $sans-serif;
+    padding:5px;
+  }
+}
+
+.subhead
+{
+  font-family: $serif;
+  font-size: 1.35em;
+  line-height: 1.25em;
+}
+
+.circle
+{
+  @include circle($blue);
+}
+
+.lines
+{
+  input
+  {
+    float:left;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .blue       {@include front-circle($blue)}
+  .red        {@include front-circle($red)}
+  .green      {@include front-circle($green)}
+  .orange     {@include front-circle($orange)}
+  .brown      {@include front-circle($brown)}
+  .yellow     {@include front-circle($yellow)}
+  .lime-green {@include front-circle($lime-green)}
+  .gray       {@include front-circle($gray)}
+  .purple     {@include front-circle($purple)}
+}
+
+footer
+{
+  border-top: 1px solid white;
+  padding-top: 20px;
+  width: 90%;
+  margin: 40px auto 30px auto;
+}
+
+
+table
+{
+  width: 80%;
+
+  .blue       {@include sm-circle($blue)}
+  .red        {@include sm-circle($red)}
+  .green      {@include sm-circle($green)}
+  .orange     {@include sm-circle($orange)}
+  .brown      {@include sm-circle($brown)}
+  .yellow     {@include sm-circle($yellow)}
+  .lime-green {@include sm-circle($lime-green)}
+  .gray       {@include sm-circle($gray)}
+  .purple     {@include sm-circle($purple)}
+
+  tr
+  {
+
+  }
+
+  th
+  {
+    text-align: left;
+    font-weight: 800;
+    font-size: 1.25em;
+  }
+
+  td
+  {
+    border-top: 1px solid white;
+    padding-bottom: 35px;
+  }
+
+  .trains
+  {
+    padding-top:10px;
+  }
+
+  .delay
+  {
+    background-color: $red;
+    padding:10px;
+  }
+
+  .good
+  {
+    background-color: $green;
+    padding:10px;
+  }
+
+  .change
+  {
+    background-color: $gray;
+    padding:10px;
+  }
 }
 
 
 
-// .tagline
-// {
-//   font-family: "proxima-nova-1","proxima-nova-2";
-//   letter-spacing: -.04em;
-//   font-weight: 800;
-//   background-color: $orange;
-//   padding:10px;
-//   font-size: 1.1em; // 20px / 16px
-//   border-radius: 1.25em;
-//   margin-right:20px;
-//   margin-top: 20px;
-//   float:left;
 
-//   a
-//   {
-//     color:black;
-//     text-decoration: none;
-//   }
 
-//   &:hover
-//   {
-//     background-color: white;
-//   }
-// }
+
+
+
+
+
+
+
+
 

@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @lines = Line.all
   end
 
   def update

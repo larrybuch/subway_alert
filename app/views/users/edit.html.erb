@@ -1,23 +1,45 @@
-<br>
 <h1>Hey, <%= @user.name %></h1>
-<h2>Edit your preferences here.</h2>
-<br>
-<%= form_for (@user) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <br>
-  Which lines do you want notifications about?
-  <% Line.all.each do |line| %>
-    <%= line.line %>
-    <%= check_box_tag '[line_ids][]', line.id, @user.lines.include?(line) %>
-  <% end %>
-  <br>
-  Edit your phone number.
-  <%= f.text_field :phone %>
-  <br>
-  <%= f.submit %>
+<h4>Edit your preferences here.</h4>
 
-<% end %>
+<div class="column-wrapper">
+  <div class="column-2">
+    <%= form_for (@user) do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+    </div>
+    <div class="field-box">
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :username %>
+    </div>
+    <div class="field-box">
+      <%= f.text_field :username %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone %>
+    </div>
+    <div class="field-box">
+      <%= f.text_field :phone %>
+    </div>
+  </div>
+
+  <div class="column-2">
+    <div class="field">
+      Which lines do you want notifications about?
+    </div>
+      <ul>
+        <% Line.all.each do |line| %>
+          <li>
+            <%= check_box_tag '[line_ids][]', line.id, @user.lines.include?(line) %>
+            <%= line.line %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+      <%= f.submit %>
+    <% end %>
+</div>
+
+<div class="clear"></div>

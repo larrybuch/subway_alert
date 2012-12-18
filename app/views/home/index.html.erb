@@ -1,49 +1,168 @@
-<h1> Your train&#8217;s delayed ... again.
-Don&#8217;t you wish you knew ahead of time? </h1>
+<div class="red-wrapper">
+  <div id="message">
+    <h4> Your train is delayed ... again.</h4>
+    <h1>Don&#8217;t you wish you knew before you left? </h1>
+    <p class="subhead">Fear no more. Sign-up for Subway Alert (set it and forget it!). We'll text you when your train goes down, then when it comes back up.</p>
+  </div>
+</div>
 
-<!-- Add Facebook & Twitter Integration here. -->
+<div class="container">
+<!--   <div class="column-wrapper">
+    <div class="column-4">
+      <div class="circle">1</div>
+      <p class="subhead">Set a username and drop in your phone number. Lorem ipsand angain um dolor text text. </p>
+    </div>
 
-<%= form_for (@user) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <br>
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
-  <br>
-  Which lines do you want to be notified about?
-  <br>
-<!--   iterate over all of the lines in the database and add a checkbox for each one -->
-  <% @lines.each do |line| %>
-    <%= line.line %>
-    <%= check_box_tag '[line_ids][]', line.id, @user.lines.include?(line) %>
-  <% end %>
-  <br>
-  <%= f.submit %>
-<% end %>
-<br>
+    <div class="column-4">
+      <div class="circle">2</div>
+      <p class="subhead">Pick some trains to follow. Lorem ipsum dolor text text. Lorem ipsum dolor text text. </p>
+    </div>
 
-<br>
+    <div class="column-4">
+      <div class="circle">3</div>
+      <p class="subhead">We'll text you know when any of your trains are delayed, and when they're back to normal.</p>
+    </div>
 
-<%= form_tag '/' do %>
-  <%= submit_tag 'Get data' %>
-<% end %>
+    <div class="column-4">
+      <div class="circle">4</div>
+      <p class="subhead">We'll text you know when any of your trains are delayed, anLorem ipsum dolor text text. .</p>
+    </div>
+  </div> -->
 
-<br>
-Line conditions
+  <div class="clear"></div>
 
-<% @lines.each do |line| %>
-  <p><%= line.line %>, <%= line.statuses[0]["condition"] %></p>
-<% end %>
+  <h2>Sign-up</h2>
 
+  <div class="column-wrapper">
+    <div class="column-2">
+      <%= form_for (@user) do |f| %>
+        <div class="field">
+          <%= f.label :name %>
+        </div>
 
+        <div class="field-box">
+          <%= f.text_field :name %>
+        </div>
+
+        <div class="field">
+          <%= f.label :username %>
+        </div>
+
+        <div class="field-box">
+          <%= f.text_field :username %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+        </div>
+
+        <div class="field-box">
+          <%= f.password_field :password %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %>
+        </div>
+
+        <div class="field-box">
+          <%= f.password_field :password_confirmation %>
+        </div>
+
+        <div class="field">
+          <%= f.label :phone %>
+        </div>
+
+        <div class="field-box">
+          <%= f.text_field :phone %>
+        </div>
+    </div>
+
+    <div class="column-2">
+      <div class="field">
+        Which lines do you want to be notified about?
+      </div>
+        <div class="lines">
+          <%= check_box_tag '[line_ids][]', @lines[0].id, @user.lines.include?(@line) %>
+          <% @lines[0].line %>
+          <div class="red">1</div>
+          <div class="red">2</div>
+          <div class="red">3</div>
+
+          <div class="clear"></div>
+
+          <%= check_box_tag '[line_ids][]', @lines[1].id, @user.lines.include?(@line) %>
+          <% @lines[1].line %>
+          <div class="green">4</div>
+          <div class="green">5</div>
+          <div class="green">6</div>
+
+          <div class="clear"></div>
+
+          <%= check_box_tag '[line_ids][]', @lines[2].id, @user.lines.include?(@line) %>
+          <% @lines[2].line %>
+          <div class="purple">7</div>
+
+          <div class="clear"></div>
+
+          <%= check_box_tag '[line_ids][]', @lines[3].id, @user.lines.include?(@line) %>
+          <% @lines[3].line %>
+          <div class="blue">A</div>
+          <div class="blue">C</div>
+          <div class="blue">E</div>
+
+          <div class="clear"></div>
+
+          <%= check_box_tag '[line_ids][]', @lines[4].id, @user.lines.include?(@line) %>
+          <% @lines[4].line %>
+          <div class="orange">B</div>
+          <div class="orange">D</div>
+          <div class="orange">F</div>
+          <div class="orange">M</div>
+
+          <div class="clear"></div>
+
+          <%= check_box_tag '[line_ids][]', @lines[5].id, @user.lines.include?(@line) %>
+          <% @lines[5].line %>
+          <div class="lime-green">G</div>
+
+          <div class="clear"></div>
+
+          <%= check_box_tag '[line_ids][]', @lines[6].id, @user.lines.include?(@line) %>
+          <% @lines[6].line %>
+          <div class="brown">J</div>
+          <div class="brown">Z</div>
+
+          <div class="clear"></div>
+
+          <%= check_box_tag '[line_ids][]', @lines[7].id, @user.lines.include?(@line) %>
+          <% @lines[7].line %>
+          <div class="gray">L</div>
+
+          <div class="clear"></div>
+
+          <%= check_box_tag '[line_ids][]', @lines[8].id, @user.lines.include?(@line) %>
+          <% @lines[8].line %>
+          <div class="yellow">N</div>
+          <div class="yellow">Q</div>
+          <div class="yellow">R</div>
+
+          <div class="clear"></div>
+        </div>
+
+          <!-- <#% @lines.each do |line| %>
+          <%#= line.line %>
+          <%#= check_box_tag '[line_ids][]', line.id, @user.lines.include?(line) %>
+        <#% end %> -->
+    </div>
+    <div class="clear"></div>
+
+    <%= f.submit %>
+    <% end %>
+
+  </div>
+
+<div class="clear"></div>
+
+</div>
 
 

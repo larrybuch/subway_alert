@@ -1,1 +1,114 @@
-Yo, lines!
+<h1>MTA Service Status</h1>
+
+  <table id="thistable">
+    <tr>
+      <th>Line</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td class="trains">
+        <span class="red">1</span>
+        <span class="red">2</span>
+        <span class="red">3</span>
+      </td>
+      <td class="status" id="red-line">
+        <%= @lines[0].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="green">4</span>
+        <span class="green">5</span>
+        <span class="green">6</span>
+      </td>
+      <td class="status" id="green-line">
+        <%= @lines[1].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="purple">7</span>
+      </td>
+      <td class="status" id="purple-line">
+        <%= @lines[2].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="blue">A</span>
+        <span class="blue">C</span>
+        <span class="blue">E</span>
+      </td>
+      <td class="status" id="blue-line">
+        <%= @lines[3].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="orange">B</span>
+        <span class="orange">D</span>
+        <span class="orange">F</span>
+        <span class="orange">M</span>
+      </td>
+      <td class="status" id="orange-line">
+        <%= @lines[4].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="lime-green">G</span>
+      </td>
+      <td class="status" id="lime-line">
+        <%= @lines[5].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="brown">J</span>
+        <span class="brown">Z</span>
+      </td>
+      <td class="status" id="brown-line">
+        <%= @lines[6].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="gray">L</span>
+      </td>
+      <td class="status" id="gray-line">
+        <%= @lines[7].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="yellow">N</span>
+        <span class="yellow">Q</span>
+        <span class="yellow">R</span>
+      </td>
+      <td class="status" id="yellow-line">
+        <%= @lines[8].statuses[0]["condition"] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="trains">
+        <span class="gray">S</span>
+      </td>
+      <td class="status" id="s-line">
+        <%= @lines[9].statuses[0]["condition"] %>
+      </td>
+    </tr>
+  </table>
+
+  <%= form_tag '/' do %>
+    <%= submit_tag 'Get data' %>
+  <% end %>
+
