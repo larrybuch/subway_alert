@@ -38,6 +38,9 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @lines = Line.all
+    if @authenticated_user != @user
+      redirect_to root_path
+    end
   end
 
   def update
